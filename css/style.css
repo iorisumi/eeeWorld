@@ -1,0 +1,45 @@
+#world{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: linear-gradient(#a8edea, #fed6e3);
+}
+
+#exhibition_1{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 5;
+}
+#exhibition_2{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 5;
+	background-color: #ffffffaa;
+	padding: 20px;
+}
+.close_content{
+	display: none;
+}
+
+.ttl{
+	font-size: 64px;
+
+}
+
+.author{
+	font-size: 24px;
+	padding: 10px 0;
+	text-align: left;
+}
+
+.express{
+	font-size: 18px;
+	padding: 10px 0;
+}
+
+.movie{
+	padding: 10px 0;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/js/three.min.js"></script>
+	<script type="text/javascript" src="/js/OBJLoader.js"></script>
+	
+</head>
+<body>
+	<div id="exhibition_1" class="">
+
+	</div>
+	<div id="exhibition_2" class="close_content">
+		<h2 class="ttl">タイトル</h2>
+		<p class="author">作者</p>
+		<p class="expless">説明<br>
+			texttexttexttexttexttexttexttext<br>
+			texttexttexttexttexttexttexttext<br>
+			texttexttexttexttexttexttexttext<br>
+		</p>
+		<div class="movie">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/jOYnxCWrgB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+	</div>
+	<div id="exhibition_3"></div>
+	<div id="exhibition_4"></div>
+	<div id="exhibition_5"></div>
+	<div id="exhibition_6"></div>
+	<div id="exhibition_7"></div>
+	<div id="world"></div>
+	<script type="text/javascript" src="/js/client_world.js"></script>
+	<script>
+		var socket = io();
+
+		socket.on('updatePosition', (data)=>{
+			updatePlayerPosition(data);
+		});
+		socket.on('connect', ()=>{
+			init();
+			socket.emit('requestOldPlayers',{});
+		});
+		socket.on('createPlayer', (data)=>{
+			createPlayer(data);
+		});
+		socket.on('addOtherPlayer', (data)=>{
+			addOtherPlayer(data);
+		});
+		socket.on('removeOtherPlayer', (data)=>{
+			removeOtherPlayer(data);
+		});
+	</script>>
+</body>
+</html>
